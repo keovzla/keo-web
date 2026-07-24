@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eliminar tu cuenta · KEO</title>
+<meta name="description" content="Cómo eliminar tu cuenta de KEO y qué pasa con tus datos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F1FAF5; --surface:#FFFFFF; --surface2:#E6F5EC;
+    --border:#CFEADD; --accent:#2FB98A; --accent-d:#249B72;
+    --text:#123A32; --text2:#4A7A6E; --text3:#8FB3A8; --red:#C7443F;
+    --display:"Bricolage Grotesque",system-ui,sans-serif;
+    --body:"Inter",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--text); font-family:var(--body);
+    font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+    padding:0 20px 80px;
+  }
+  .wrap{max-width:660px;margin:0 auto}
+
+  /* ── Cabecera ── */
+  header{padding:56px 0 40px;border-bottom:1px solid var(--border)}
+  .mark{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--display);font-weight:800;font-size:20px;
+    letter-spacing:-0.02em;margin-bottom:32px;
+  }
+  .dot{width:26px;height:26px;border-radius:9px;
+    background:linear-gradient(135deg,var(--accent),#A5CC4B)}
+  h1{
+    font-family:var(--display);font-weight:800;
+    font-size:clamp(30px,7vw,44px);line-height:1.1;
+    letter-spacing:-0.03em;margin-bottom:14px;
+  }
+  .lede{font-size:17px;color:var(--text2);max-width:52ch}
+
+  /* ── Secciones ── */
+  section{padding:40px 0;border-bottom:1px solid var(--border)}
+  section:last-of-type{border-bottom:0}
+  .eyebrow{
+    font-size:11px;font-weight:700;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--accent-d);margin-bottom:10px;
+  }
+  h2{
+    font-family:var(--display);font-weight:700;
+    font-size:24px;letter-spacing:-0.02em;margin-bottom:8px;
+  }
+  .sub{color:var(--text2);margin-bottom:24px}
+
+  /* ── Pasos numerados ── */
+  ol{list-style:none;counter-reset:paso}
+  ol li{
+    counter-increment:paso;position:relative;
+    padding:0 0 22px 46px;
+  }
+  ol li:last-child{padding-bottom:0}
+  ol li::before{
+    content:counter(paso);position:absolute;left:0;top:-1px;
+    width:30px;height:30px;border-radius:50%;
+    background:var(--surface);border:1.5px solid var(--accent);
+    color:var(--accent-d);font-weight:700;font-size:14px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  ol li::after{
+    content:"";position:absolute;left:14.5px;top:32px;bottom:8px;
+    width:1.5px;background:var(--border);
+  }
+  ol li:last-child::after{display:none}
+  ol strong{font-weight:600}
+
+  /* ── Tarjeta de contacto ── */
+  .card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:18px;padding:24px;
+  }
+  .mail{
+    display:inline-block;font-family:var(--display);font-weight:700;
+    font-size:clamp(18px,4.6vw,25px);letter-spacing:-0.02em;
+    color:var(--accent-d);text-decoration:none;
+    border-bottom:2px solid var(--accent);padding-bottom:2px;
+    word-break:break-all;
+  }
+  .mail:hover{color:var(--text)}
+  .card p{margin-top:16px;color:var(--text2);font-size:15px}
+
+  /* ── El libro mayor: qué se borra / qué se queda ── */
+  .ledger{border-top:1.5px solid var(--text);margin-top:4px}
+  .row{
+    display:grid;grid-template-columns:1fr 88px;gap:16px;
+    align-items:start;padding:15px 0;border-bottom:1px solid var(--border);
+  }
+  .row p{font-size:15px}
+  .row small{display:block;color:var(--text2);font-size:13.5px;margin-top:3px}
+  .tag{
+    justify-self:end;font-size:11px;font-weight:700;letter-spacing:0.06em;
+    text-transform:uppercase;padding:5px 10px;border-radius:20px;white-space:nowrap;
+  }
+  .go{background:rgba(199,68,63,0.1);color:var(--red);border:1px solid rgba(199,68,63,0.25)}
+  .stay{background:var(--surface2);color:var(--text2);border:1px solid var(--border)}
+
+  .note{
+    margin-top:26px;font-size:14px;color:var(--text2);
+    background:var(--surface2);border-radius:14px;padding:16px 18px;
+  }
+  footer{padding-top:36px;font-size:13px;color:var(--text3)}
+  footer a{color:var(--text2)}
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap>*{animation:rise .5s ease both}
+    header{animation-delay:.02s} section:nth-of-type(1){animation-delay:.08s}
+    section:nth-of-type(2){animation-delay:.12s} section:nth-of-type(3){animation-delay:.16s}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+  a:focus-visible,.mail:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mark"><span class="dot"></span>KEO</div>
+    <h1>Eliminar tu cuenta</h1>
+    <p class="lede">Puedes borrar tu cuenta de KEO y tus datos cuando quieras. Aquí te explicamos cómo hacerlo y qué pasa con tu información.</p>
+  </header>
+
+  <section>
+    <p class="eyebrow">La forma más rápida</p>
+    <h2>Desde la app</h2>
+    <p class="sub">Si tienes KEO instalada, son cuatro toques.</p>
+    <ol>
+      <li>Abre KEO y entra con tu cuenta.</li>
+      <li>Ve a <strong>Perfil</strong>. Si tienes un negocio, entra al panel y abre la pestaña <strong>Perfil</strong>.</li>
+      <li>Baja del todo y toca <strong>Eliminar mi cuenta</strong>.</li>
+      <li>Escribe tu contraseña y la palabra <strong>ELIMINAR</strong> para confirmar.</li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="eyebrow">Si ya no tienes la app</p>
+    <h2>Escríbenos</h2>
+    <p class="sub">Mándanos un correo desde la misma dirección con la que te registraste.</p>
+    <div class="card">
+      <a class="mail" href="mailto:keovzla@gmail.com?subject=Eliminar%20mi%20cuenta%20de%20KEO&amp;body=Hola%2C%20quiero%20eliminar%20mi%20cuenta%20de%20KEO%20y%20todos%20mis%20datos.">keovzla@gmail.com</a>
+      <p>Escribe «Eliminar mi cuenta» en el asunto. Te confirmamos por correo cuando esté hecho, en un plazo máximo de 30 días.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Sin letra pequeña</p>
+    <h2>Qué se borra y qué se queda</h2>
+    <p class="sub">Todo lo que te identifica desaparece. Lo único que permanece son registros sin tu nombre, para que los negocios no pierdan sus cuentas.</p>
+
+    <div class="ledger">
+      <div class="row"><p>Tu cuenta y tu contraseña<small>No podrás volver a entrar con ese correo</small></p><span class="tag go">Se borra</span></div>
+      <div class="row"><p>Tu nombre, correo y teléfono</p><span class="tag go">Se borra</span></div>
+      <div class="row"><p>Tus favoritos y tus avisos</p><span class="tag go">Se borra</span></div>
+      <div class="row"><p>Tus conversaciones con negocios<small>Se borran también para el negocio</small></p><span class="tag go">Se borra</span></div>
+      <div class="row"><p>Tus citas pendientes<small>Se cancelan antes de borrar la cuenta</small></p><span class="tag go">Se borra</span></div>
+      <div class="row"><p>Las reseñas que escribiste<small>Siguen publicadas, pero firmadas como «Usuario eliminado»</small></p><span class="tag stay">Se queda</span></div>
+      <div class="row"><p>El registro de citas ya pasadas<small>El negocio lo conserva sin tu nombre, para su contabilidad</small></p><span class="tag stay">Se queda</span></div>
+    </div>
+
+    <p class="note">Si eliminas una cuenta de negocio se borra también el negocio entero: su ficha, su equipo, sus servicios, sus reseñas y sus citas. Avisamos automáticamente a los clientes que tuvieran una cita reservada. Las copias de seguridad se purgan como máximo a los 30 días.</p>
+  </section>
+
+  <footer>
+    KEO · Venezuela · <a href="mailto:keovzla@gmail.com">keovzla@gmail.com</a><br>
+    Última actualización: julio de 2026
+  </footer>
+
+</div>
+</body>
+</html>

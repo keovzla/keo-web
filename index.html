@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KEO · Información legal</title>
+<meta name="description" content="Política de privacidad y eliminación de cuenta de la app KEO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F1FAF5; --surface:#FFFFFF; --surface2:#E6F5EC;
+    --border:#CFEADD; --accent:#2FB98A; --accent-d:#249B72;
+    --text:#123A32; --text2:#4A7A6E; --text3:#8FB3A8;
+    --display:"Bricolage Grotesque",system-ui,sans-serif;
+    --body:"Inter",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--text);font-family:var(--body);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+    padding:0 20px 70px;
+  }
+  .wrap{max-width:600px;margin:0 auto}
+  header{padding:64px 0 40px}
+  .mark{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--display);font-weight:800;font-size:20px;
+    letter-spacing:-0.02em;margin-bottom:34px;
+  }
+  .dot{width:26px;height:26px;border-radius:9px;
+    background:linear-gradient(135deg,var(--accent),#A5CC4B)}
+  h1{
+    font-family:var(--display);font-weight:800;
+    font-size:clamp(30px,7vw,42px);line-height:1.1;
+    letter-spacing:-0.03em;margin-bottom:14px;
+  }
+  .lede{font-size:17px;color:var(--text2);max-width:48ch}
+
+  .docs{display:grid;gap:12px}
+  a.doc{
+    display:flex;align-items:center;gap:18px;
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:18px;padding:22px 24px;text-decoration:none;color:inherit;
+    transition:border-color .18s ease, transform .18s ease;
+  }
+  a.doc:hover{border-color:var(--accent);transform:translateY(-2px)}
+  a.doc h2{
+    font-family:var(--display);font-weight:700;font-size:18px;
+    letter-spacing:-0.015em;margin-bottom:2px;
+  }
+  a.doc p{font-size:14px;color:var(--text2);line-height:1.45}
+  .arrow{
+    margin-left:auto;flex-shrink:0;width:32px;height:32px;border-radius:50%;
+    background:var(--surface2);color:var(--accent-d);
+    display:flex;align-items:center;justify-content:center;
+    font-size:17px;font-weight:600;
+  }
+
+  footer{
+    margin-top:44px;padding-top:26px;border-top:1px solid var(--border);
+    font-size:13.5px;color:var(--text3);
+  }
+  footer a{color:var(--text2)}
+  a:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:4px}
+  @media (prefers-reduced-motion:reduce){a.doc{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mark"><span class="dot"></span>KEO</div>
+    <h1>Información legal</h1>
+    <p class="lede">KEO es la app para reservar en barberías, peluquerías, spas y salones de uñas en Venezuela.</p>
+  </header>
+
+  <div class="docs">
+    <a class="doc" href="politica-privacidad.html">
+      <div>
+        <h2>Política de privacidad</h2>
+        <p>Qué datos guardamos, para qué los usamos y con quién los compartimos.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="doc" href="eliminar-cuenta.html">
+      <div>
+        <h2>Eliminar tu cuenta</h2>
+        <p>Cómo borrar tu cuenta y tus datos, y qué pasa con tu información.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <footer>
+    KEO · Venezuela · <a href="mailto:keovzla@gmail.com">keovzla@gmail.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
